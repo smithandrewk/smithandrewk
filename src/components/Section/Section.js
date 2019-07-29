@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import startupAnim from './startupAnim';
 import img from './cover.JPG';
 
 export default class Section extends Component {
+    componentDidMount(){
+        startupAnim();
+    }
     render() {
         return (
             <section>
