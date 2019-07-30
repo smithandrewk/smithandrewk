@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './Thoughts.css';
 const firebase = require('./firebase');
 
 export default class Thoughts extends Component {
 
-    componentDidMount(){
+    async componentDidMount(){
         // Init Stack
         const thoughtList = document.getElementById("thoughtList");
         const submitButton = document.getElementById("submitButton");
@@ -21,19 +22,23 @@ export default class Thoughts extends Component {
             }
         });
         firebase.init(thoughtList, submitButton, thoughtInput);
-        firebase.getThoughts();
+        await firebase.getThoughts();
+        thoughtInput.style.display = 'initial';
+        submitButton.style.display = 'initial';
+
 
     }
     render() {
         return (
-            <div>
+            <div id="one">
                 <ul id="thoughtList">
-                    <li></li>
+                    <li id="initialLi"></li>
                 </ul>
-                <input id="thoughtInput" type="text" placeholder="insert new thought"/>
-                <button type="submit" id="submitButton">submit</button>
-                <br/>
-
+                <div id="two">
+                    <input style={{display: 'none'}} id="thoughtInput" type="text" placeholder="insert new thought"/>
+                    <button style={{display: 'none'}} type="submit" id="submitButton">submit</button>
+                    <br/>
+                </div>
             </div>
 
         )

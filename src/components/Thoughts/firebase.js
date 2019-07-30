@@ -27,7 +27,8 @@ const init = (aThoughtList, aSubmitButton, aThoughtInput) => {
 }
 
 const getThoughts = () => {
-    db.collection('thoughts').get()
+    return new Promise((resolve, reject) => {
+        db.collection('thoughts').get()
         .then(docs => {
             docs.forEach(doc => {
                 let div = document.createElement('div');
@@ -37,13 +38,14 @@ const getThoughts = () => {
                 let i = document.createElement("i");
                 i.className = "fas fa-trash fa-lg";
                 i.id = doc.id;
-                let hr = document.createElement('hr');
                 li.appendChild(document.createTextNode(doc.data().thought));
                 div.appendChild(li);
                 div.appendChild(i);
-                div.appendChild(hr);
-            })
-        }).catch(err => console.log(err));
+            });
+        })
+        .then(setTimeout(resolve, 450))
+        .catch(err => console.log(err)); 
+    });
 }
 
 
@@ -72,11 +74,9 @@ const addThoughtWithinSession = (thought) => {
     let i = document.createElement("i");
     i.className = "fas fa-trash fa-lg";
     i.id = "trash";
-    let hr = document.createElement('hr');
     li.appendChild(document.createTextNode(thought));
     div.appendChild(li);
     div.appendChild(i);
-    div.appendChild(hr);
 }
 
 const inputKeyPress = (event) => {

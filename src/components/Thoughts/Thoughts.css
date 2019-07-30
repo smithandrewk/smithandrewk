@@ -1,0 +1,48 @@
+#one{
+    background: linear-gradient(to left, rgb(223, 223, 223), rgb(255, 255, 255));
+}
+#thoughtList{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+}
+#two{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+#thoughtList li {
+    border: none;
+    padding: 20px;
+}
+#initialLi{
+    border: none;
+}
+#thoughtInput{
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 0, 0, 0);
+    border: 2px solid black;
+    width: 75%;
+}
+#thoughtInput::placeholder{
+    color: black;
+}
+#thoughtInput:focus{
+    outline: none;
+}
+#submitButton{
+    cursor: pointer;
+    background-color: rgba(235, 235, 235, 0);
+    border: 2px solid black;
+    padding: 10px;
+    width: 25%;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
