@@ -1,11 +1,12 @@
-const navAnim = () => {
-    const burger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+const navAnim = (burger, nav, navLinks, headline) => {
+
 
     //Toggle nav
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
+        if(headline)
+            headline.classList.toggle('headlineActive');
+        
         //Animate links
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
@@ -19,4 +20,4 @@ const navAnim = () => {
     });
 
 }
- export default navAnim;
+export default navAnim;
