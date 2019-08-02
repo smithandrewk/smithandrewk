@@ -17,12 +17,10 @@ let app = firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore(app);
 //Init stack
 let thoughtList;
-let submitButton;
 let thoughtInput;
 
-const init = (aThoughtList, aSubmitButton, aThoughtInput) => {
+const init = (aThoughtList, aThoughtInput) => {
     thoughtList = aThoughtList;
-    submitButton = aSubmitButton;
     thoughtInput = aThoughtInput;
 }
 
