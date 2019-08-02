@@ -21,7 +21,7 @@ export default class Thoughts extends Component {
                 firebase.del(event.target.id);
             }
         });
-        firebase.init(thoughtList, submitButton, thoughtInput);
+        firebase.init(thoughtList, thoughtInput);
         await firebase.getThoughts();
         thoughtInput.style.display = 'initial';
         submitButton.style.display = 'initial';
