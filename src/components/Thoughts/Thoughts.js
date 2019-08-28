@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Thoughts.css';
-const firebase = require('./firebase');
+const firebase = require('../../firebase');
 
 export default class Thoughts extends Component {
 
@@ -25,8 +25,6 @@ export default class Thoughts extends Component {
         await firebase.getThoughts();
         thoughtInput.style.display = 'initial';
         submitButton.style.display = 'initial';
-
-
     }
     render() {
         return (

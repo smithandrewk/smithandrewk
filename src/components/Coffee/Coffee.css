@@ -1,0 +1,188 @@
+#coffee{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#coffee-button{
+    cursor: pointer;
+    background-color: rgba(235, 235, 235, 0);
+    border: 2px solid black;
+    padding: 10px;
+    width: 25%;
+    min-width: 150px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    font-size: inherit;
+    transition: transform 0.4s ease
+}
+#coffee-button:hover{
+    border: 2px solid #5fa8d3;
+    transform: scale(1.2);
+}
+#coffee-button:active{
+    transform: scale(.9);
+    background-color: #5fa8d3;
+}
+#coffee-button:focus{
+    outline: none;
+}
+#coffee-button.clicked{
+    border: 2px solid #5fa8d3;
+}
+.last-coffee{
+    width: 75%;
+    text-align: center;
+    border: 1px solid #5fa8d3;
+    padding: 10px 0;
+}
+.coffee-form {
+    width: 50%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.coffee-form input{
+    background-color: #5fa8d300;
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+}
+.coffee-form label{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+.coffee-form label::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5fa8d3;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+.content-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-name .content-name,
+.coffee-form input:valid + .label-name .content-name{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-name::after,
+.coffee-form input:valid+.label-name::after{
+    transform: translateX(0%);
+}
+.content-amount{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-amount .content-amount,
+.coffee-form input:valid + .label-amount .content-amount{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-amount::after,
+.coffee-form input:valid+.label-amount::after{
+    transform: translateX(0%);
+}
+.content-method{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-method .content-method,
+.coffee-form input:valid + .label-method .content-method{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-method::after,
+.coffee-form input:valid+.label-method::after{
+    transform: translateX(0%);
+}
+.content-roast{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-roast .content-roast,
+.coffee-form input:valid + .label-roast .content-roast{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-roast::after,
+.coffee-form input:valid+.label-roast::after{
+    transform: translateX(0%);
+}
+.content-brand{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-brand .content-brand,
+.coffee-form input:valid + .label-brand .content-brand{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-brand::after,
+.coffee-form input:valid+.label-brand::after{
+    transform: translateX(0%);
+}
+.content-mug{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-mug .content-mug,
+.coffee-form input:valid + .label-mug .content-mug{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-mug::after,
+.coffee-form input:valid+.label-mug::after{
+    transform: translateX(0%);
+}
+.content-comments{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.coffee-form input:focus + .label-comments .content-comments,
+.coffee-form input:valid + .label-comments .content-comments{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+.coffee-form input:focus+.label-comments::after,
+.coffee-form input:valid+.label-comments::after{
+    transform: translateX(0%);
+}
+

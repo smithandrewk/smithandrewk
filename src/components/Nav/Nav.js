@@ -37,7 +37,7 @@ export default class Nav extends Component {
     render() {
         return (
             <nav>
-                <div className="logo"></div>
+                <div className="logo"><a href="coffee">AS</a></div>
                 <ul className="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="about">Gallery</a></li>

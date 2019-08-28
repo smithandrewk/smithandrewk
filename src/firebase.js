@@ -41,11 +41,37 @@ const getThoughts = () => {
                 div.appendChild(i);
             });
         })
+        //So the button loads after the list loads (stylistic)
         .then(setTimeout(resolve, 450))
         .catch(err => console.log(err)); 
     });
 }
+const getCoffee = () => {
+    return new Promise((resolve, reject) => {
 
+        db.collection('coffees')
+            .orderBy('id', 'desc')
+            .limit(10)
+            .get()
+            .then(docs => {
+                let lastTenCoffees = [];
+                docs.forEach(doc => {
+                    lastTenCoffees.push(doc.data());
+                });
+                resolve(lastTenCoffees);
+            });
+    });
+}
+//A coffee in should be a correctly formatted object
+const addCoffee = (aCoffee) => {
+    db.collection('coffees').doc(Date.now().toString()).set(aCoffee)
+    .then(() => {
+        console.log('Document successfully written!');
+    })
+    .catch((err) => {
+        console.log('error writing doc: ', err);
+    });
+}
 
 const add = (aThought) => {
     db.collection("thoughts").doc(Date.now().toString()).set({
@@ -88,5 +114,7 @@ module.exports = {
     getThoughts,
     add,
     del,
-    inputKeyPress
+    inputKeyPress,
+    addCoffee,
+    getCoffee
 }
