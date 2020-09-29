@@ -1,1 +1,1 @@
-# Andrew = [Mathematics, Computer_Science, Coffee,...]
+# Andrew = [Math, Code, Coffee,...]
