@@ -1,2 +1,1 @@
-# Hello!
-Andrew = [Mathematics, Computer_Science, Coffee,...]
+# Andrew = [Mathematics, Computer_Science, Coffee,...]
